@@ -22,23 +22,19 @@
     <!-- React 앱 코드를 로드하는 스크립트 태그입니다. -->
     <!-- type="module"을 사용하여 ES 모듈을 지원합니다. -->
     <script type="module">
+        // 이 로그 메시지가 콘솔에 나타나면 스크립트가 실행되기 시작했음을 의미합니다.
+        console.log("Script execution started in index.html.");
+
         // React 및 ReactDOM을 CDN에서 가져옵니다.
         import React, { useState } from 'https://esm.sh/react@18.2.0';
         import ReactDOM from 'https://esm.sh/react-dom@18.2.0/client';
 
         // lucide-react 아이콘 컴포넌트를 CDN에서 가져옵니다.
-        // 이전에 제공된 lucide-react import 경로가 동작하지 않을 경우,
-        // 아래와 같이 개별 아이콘을 가져오는 것을 시도해 볼 수 있습니다.
-        // import { Plus, Minus, Upload, Download } from 'https://esm.sh/lucide-react@0.303.0';
-        // 또는 전체 번들을 가져옵니다.
-        const { Plus, Minus, Upload, Download } = window.LucideReact; // LucideReact는 CDN 로드 후 전역 객체로 제공될 수 있습니다.
-
-        // LucideReact가 전역으로 로드되지 않는 경우를 대비하여 직접 로드하는 대체 방법
-        // 이 방법은 개별 아이콘을 명시적으로 가져와야 합니다.
-        // import Plus from 'https://esm.sh/lucide-react@0.303.0/dist/esm/icons/plus';
-        // import Minus from 'https://esm.sh/lucide-react@0.303.0/dist/esm/icons/minus';
-        // import Upload from 'https://esm.sh/lucide-react@0.303.0/dist/esm/icons/upload';
-        // import Download from 'https://esm.sh/lucide-react@0.303.0/dist/esm/icons/download';
+        // esm.sh를 통해 개별 아이콘을 직접 가져옵니다.
+        import Plus from 'https://esm.sh/lucide-react@0.303.0/dist/esm/icons/plus';
+        import Minus from 'https://esm.sh/lucide-react@0.303.0/dist/esm/icons/minus';
+        import Upload from 'https://esm.sh/lucide-react@0.303.0/dist/esm/icons/upload';
+        import Download from 'https://esm.sh/lucide-react@0.303.0/dist/esm/icons/download';
 
 
         // CatalogGenerator React 컴포넌트 (이전에 제공된 코드)
@@ -438,7 +434,5 @@
         const root = ReactDOM.createRoot(container);
         root.render(React.createElement(CatalogGenerator));
     </script>
-    <!-- Lucide React 아이콘을 전역으로 로드합니다. -->
-    <script src="https://unpkg.com/lucide-react@0.303.0/dist/umd/lucide-react.js"></script>
 </body>
 </html>
